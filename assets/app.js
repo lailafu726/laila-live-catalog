@@ -235,7 +235,7 @@
     if (detailed && isUrl(p.sourceUrl)) {
       nameHtml = '<a href="' + esc(p.sourceUrl.trim()) + '" target="_blank" rel="noopener noreferrer">' + nameHtml + " ↗</a>";
     }
-    var rankHtml = rank ? '<span class="top-mark" title="按近30天站内销量降序，选中 ' + rank + '">Top' + rank + "</span>" : "";
+    var rankHtml = rank ? '<span class="top-mark" title="精选第 ' + rank + '">Top' + rank + "</span>" : "";
     // 功效/卖点标签：product.tags 数组，合规措辞
     var tagsHtml = Array.isArray(p.tags) && p.tags.length
       ? '<p class="p-tags">' + p.tags.map(function (t) { return '<span class="p-tag">' + esc(t) + "</span>"; }).join("") + "</p>"
@@ -285,7 +285,7 @@
     if (shown.length) {
       productsHtml =
         '<div class="merchant-products">' +
-        (inCategory ? '<p class="cat-note">本类销量精选 · ' + esc(state.fine) + "</p>" : "") +
+        (inCategory ? '<p class="cat-note">本类精选 · ' + esc(state.fine) + "</p>" : "") +
         '<div class="mc-products">' +
         shown.map(function (p, i) { return productItemHtml(p, false, i + 1); }).join("") +
         "</div>";
@@ -299,7 +299,7 @@
     } else {
       productsHtml =
         '<div class="merchant-products">' +
-        (inCategory ? '<p class="cat-note">本类销量精选 · ' + esc(state.fine) + "</p>" : "") +
+        (inCategory ? '<p class="cat-note">本类精选 · ' + esc(state.fine) + "</p>" : "") +
         '<p class="p-unknown">' + esc(m.emptyReason || "本次查询未找到可展示商品，详见原始货盘资料") + "</p>" +
         '<div class="mc-foot">' +
         '<button class="btn-detail" data-merchant="' + esc(m.name || "") + '">查看详情</button></div>' +
@@ -350,7 +350,6 @@
     );
     if (m.owner) body += kvRow("负责人", esc(m.owner));
     if (m.originalName && m.originalName !== m.name) body += kvRow("清单名称", esc(m.originalName));
-    if (m.queryCount !== undefined) body += kvRow("查询范围", "上架商品 " + esc(m.queryCount) + " 款，按近30天站内销量降序选取展示");
     body += "</div></div>";
 
     // 店铺标签
@@ -369,8 +368,8 @@
 
     // 精选商品：选中类目时只展示该类目商品
     var headTitle = inCategory
-      ? "本类销量精选（" + esc(state.fine) + " · " + products.length + " 款 · 按近30天站内销量降序）"
-      : "精选商品（" + products.length + " 款 · 按近30天站内销量降序）";
+      ? "本类精选（" + esc(state.fine) + " · " + products.length + " 款）"
+      : "精选商品（" + products.length + " 款）";
     body += '<div class="drawer-section"><h4>' + headTitle + "</h4>";
     if (products.length) {
       body +=
