@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日常滋补·达人合作货盘（行业AM 莱拉）</title>
+  <meta name="description" content="日常滋补、冲饮食补与达人合作货盘参考">
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+  <header class="page-head">
+    <div class="head-inner">
+      <div class="head-text">
+        <p class="eyebrow">小红书电商 · 达人选品参考</p>
+        <h1>日常滋补 · 达人合作货盘</h1>
+        <p class="byline">行业AM 莱拉</p>
+        <p class="sub" id="headSub">加载中…</p>
+        <p class="hint">达人选品参考 · 商品价格与合作条件以商家确认结果为准</p>
+      </div>
+      <section class="catalog-guide" aria-label="货盘选品导读">
+        <article class="guide-item">
+          <h2>1、货盘覆盖哪些场景？</h2>
+          <p>早餐冲饮、日常茶饮、秋冬滋补、节令送礼。</p>
+        </article>
+        <article class="guide-item">
+          <h2>2、适合哪些人群？</h2>
+          <p>通勤上班族、轻食健身人群，以及关注日常食养、家庭滋补、送礼和草本护理的粉丝。</p>
+        </article>
+        <article class="guide-item">
+          <h2>3、货盘怎么选？</h2>
+          <p>早餐轻食选冲饮粉与超级食物，日常食养选茶饮零食，滋补送礼选蜂蜜膏方，护理需求看蜂胶与草本产品。</p>
+        </article>
+      </section>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <div class="toolbar" id="toolbar">
+      <div class="filter-row">
+        <div class="chips" id="fineChips" role="group" aria-label="细类筛选"></div>
+        <div class="search-wrap">
+          <input type="search" id="searchInput" placeholder="搜索商家 / 细类 / 标签 / 商品 / 历史合作…" autocomplete="off">
+        </div>
+      </div>
+      <p class="count-line" id="countLine"></p>
+    </div>
+
+    <section id="merchantList" class="merchant-list" aria-live="polite"></section>
+    <div id="emptyState" class="empty-state" hidden>
+      <p>没有匹配的商家</p>
+      <p class="empty-sub">换个筛选条件或关键词试试</p>
+    </div>
+  </main>
+
+  <footer class="page-foot">
+    <p>商家货盘与商品信息整理 · 数据更新：2026-10-23</p>
+    <p>近30天销量与客单统计：2026-09-23 — 2026-10-22 · 历史达人直播记录截至 2026-10-21，不代表当前开通状态</p>
+    <p>每商家每类目最多 5 款精选商品（按近30天站内销量降序），非全店完整货盘 · 展示价为商品价格区间，非直播到手价</p>
+  </footer>
+
+  <div class="qr-float" id="qrFloat">
+    <button class="qr-toggle" id="qrToggle" aria-label="查看企业微信二维码">微信</button>
+    <div class="qr-pop" id="qrPop">
+      <img src="./assets/contact.jpg" alt="企业微信二维码 · 莱拉" width="116" height="116">
+      <span>扫码加小二企微<br><em>建联拉群</em></span>
+    </div>
+  </div>
+
+  <div class="drawer-mask" id="drawerMask" hidden></div>
+  <aside class="drawer" id="drawer" hidden aria-modal="true" role="dialog" aria-label="商家详情">
+    <div class="drawer-head">
+      <div>
+        <h2 id="drawerTitle">商家详情</h2>
+        <p class="drawer-sub" id="drawerSub"></p>
+      </div>
+      <button class="drawer-close" id="drawerClose" aria-label="关闭">×</button>
+    </div>
+    <div class="drawer-body" id="drawerBody"></div>
+  </aside>
+
+  <script src="./assets/app.js"></script>
+</body>
+</html>
