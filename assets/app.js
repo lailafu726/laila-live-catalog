@@ -86,10 +86,9 @@
     return Math.min((m.products || []).length, 5);
   }
 
-  /* 简短一行：库存 / 近30天销量（带统计时间 tooltip），绝不虚构 */
+  /* 仅展示近30天销量，带统计时间提示。 */
   function productMeta(p) {
     var parts = [];
-    if (p.stock !== null && p.stock !== undefined && p.stock !== "") parts.push("库存 " + dash(p.stock));
     if (p.sales30 !== null && p.sales30 !== undefined && p.sales30 !== "") parts.push("近30天销 " + dash(p.sales30));
     return parts.length ? parts.join(" · ") : "";
   }
@@ -346,10 +345,9 @@
     body += kvRow(
       "店铺",
       isUrl(m.shopUrl)
-        ? '<a href="' + esc(m.shopUrl.trim()) + '" target="_blank" rel="noopener noreferrer">' + esc(m.shopUrl.trim()) + " ↗</a>"
-        : (m.shopUrl ? esc(m.shopUrl) : "—")
+        ? '<a href="' + esc(m.shopUrl.trim()) + '" target="_blank" rel="noopener noreferrer">打开店铺主页 ↗</a>'
+        : "—"
     );
-    if (m.shopId) body += kvRow("店铺 ID", esc(m.shopId));
     if (m.owner) body += kvRow("负责人", esc(m.owner));
     if (m.originalName && m.originalName !== m.name) body += kvRow("清单名称", esc(m.originalName));
     if (m.queryCount !== undefined) body += kvRow("查询范围", "上架商品 " + esc(m.queryCount) + " 款，按近30天站内销量降序选取展示");
