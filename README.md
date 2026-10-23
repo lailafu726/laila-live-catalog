@@ -2,6 +2,8 @@
 
 行业 AM：莱拉。
 
+网页访问：https://lailafu726.github.io/laila-live-catalog/
+
 静态选品参考页，展示商家、分类精选商品与联系二维码。
 
 ## 文件
