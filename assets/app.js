@@ -86,10 +86,9 @@
     return Math.min((m.products || []).length, 5);
   }
 
-  /* 仅展示近30天销量，带统计时间提示。 */
+  /* 不展示库存或销量，相关数据仅用于选品排序。 */
   function productMeta(p) {
     var parts = [];
-    if (p.sales30 !== null && p.sales30 !== undefined && p.sales30 !== "") parts.push("近30天销 " + dash(p.sales30));
     return parts.length ? parts.join(" · ") : "";
   }
 
