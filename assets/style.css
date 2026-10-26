@@ -580,3 +580,6 @@ h1, h2, h3 { font-family: var(--serif); }
 .guide-item h2{margin:0 0 9px;color:var(--ink);font-family:var(--serif);font-size:16px;font-weight:600;line-height:1.5}
 .guide-item p{margin:0;color:var(--ink-2);font-size:13.5px;line-height:1.85;overflow-wrap:anywhere}
 @media(max-width:960px){.catalog-guide{grid-template-columns:minmax(0,1fr);gap:16px;margin-top:22px;padding-top:18px}.guide-item+.guide-item{border-left:0;padding-left:0;padding-top:14px;border-top:1px solid var(--line)}.guide-item h2{font-size:16px;margin-bottom:5px}}
+
+/* 有专场预算标签 */
+.budget-tag{display:inline-block;margin-left:8px;padding:1px 9px;border-radius:999px;font-family:inherit;font-size:11.5px;font-weight:500;line-height:1.7;color:#a8541f;background:var(--cinnabar-soft,#f3e6df);border:1px solid var(--cinnabar-line,#e0c8bd);vertical-align:2px}

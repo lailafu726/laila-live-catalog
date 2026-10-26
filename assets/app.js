@@ -270,7 +270,7 @@
     var introHtml =
       '<div class="merchant-intro">' +
       '<div class="mc-head"><div class="mc-title">' +
-      "<h3>" + esc(m.name || "（未命名商家）") + "</h3>" +
+      "<h3>" + esc(m.name || "（未命名商家）") + (m.specialSession === true ? '<span class="budget-tag" title="原清单标注有专场费用，具体预算以沟通为准">有专场预算</span>' : "") + "</h3>" +
       '<div class="cat-tags">' + fineCats(m).map(function (c) { return '<span class="cat-tag">' + esc(c) + "</span>"; }).join("") + "</div>" +
       "</div>" +
       (isUrl(m.shopUrl)
